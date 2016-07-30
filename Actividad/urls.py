@@ -3,4 +3,5 @@ from . import views
 urlpatterns = [
     url(r'^$', views.Landing, name='Landing'),
     url(r'register$', views.Register, name='Register'),
+    url(r'newUser', views.Welcome, name='Welcome')
 ]

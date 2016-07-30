@@ -4,5 +4,12 @@ Hey! You are registering
   Correo: <input type="text" name="mail"><br>
   Usuario<input type="text" name="userN"><br>
   Contraseña: <input type="password" name="pass"><br>
-  <input type="submit" value="Submit">
+  <input type="submit" value="Add new user">
+</form>
+
+Hey! welcome to register
+<form action="/new-user-submited/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
 </form>

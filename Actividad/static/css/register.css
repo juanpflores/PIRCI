@@ -20,17 +20,23 @@ General Registro
 form {
 	padding: 10px 32px;
 }
-
-.registro-container {
+.container-fluid{
 	background-color: #efefee;
+}
+.registro-container {
 	height: 100vh;
+	max-width: 500px;
+    display: block;
+    margin: 0 auto;
 }
 
 input.form-control {
 	border: 2px solid #e83185;
 	height: 4rem;
 }
-
+.form-control:focus {
+	border-color: #ff0075;
+}
 #pink {
 	background-color: #e83185;
 	color: white;

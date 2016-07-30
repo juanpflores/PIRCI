@@ -1,5 +1,5 @@
 from django.db import models
-
+ 
 
 
 class Actividad(models.Model):
@@ -8,8 +8,8 @@ class Actividad(models.Model):
     descripcion = models.TextField()
     #imagen ..... https://docs.djangoproject.com/es/1.9/ref/models/fields/
     documentacion = models.TextField()
-    recompensa=models.DecimalField(..., max_digits=5, decimal_places=0)  
-    boton=models.BooleanField()
+    recompensa=models.IntegerField()
+    #boton=models.BooleanField()
 
 
     def publish(self):

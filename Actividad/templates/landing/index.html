@@ -4,6 +4,58 @@
 
 {% block body %}
 
-<h1>It Works JP</h1>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">PARECI</a>
+    </div>
 
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Registrarse</a></li>
+        <li><a href="#">Iniciar Sesión</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="main-container col-xs-12">
+	<main>
+		<h1 class="text-center">PARECI</h1>
+		<h4 class="text-center">Realiza trámites gubernamentales y responsabilidades ciudadanas bajo un sistema de incentivos.</h4>
+	</main>
+	
+</div>
+
+<style type="text/css" media="screen">
+	.navbar {
+		margin-bottom: 0;
+	}
+	main{
+		margin-top: 33vh;
+    	color: white;
+	}
+	.main-container {
+		height: 92vh;
+		background: url(https://hd.unsplash.com/photo-1427751840561-9852520f8ce8) no-repeat center center fixed; 
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+
+	}
+</style>
 {% endblock %}

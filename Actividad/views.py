@@ -15,4 +15,5 @@ def Welcome(request):
 	t=request.POST.get("myTitle")
 	Usuario.objects.create(curp=c, password=p, monedas='0', correo=e,title=t)
 	return render(request,'landing/registerUser.html')
+	
 

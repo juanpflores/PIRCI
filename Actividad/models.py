@@ -21,14 +21,27 @@ class Acti(models.Model):
 
 class Usuario(models.Model):
     curp = models.CharField(max_length=20)
-    userName = models.CharField(max_length=30)
     password = models.CharField(max_length=20)
-    monedas=models.IntegerField()
-    title=models.CharField(max_length=20, default='blah')
+    monedas=models.PositiveIntegerField()
+    correo=models.CharField(max_length=90)
+    title=models.CharField(max_length=90, default='user1')
 
    
     def publish(self):
         self.save()
-
     def __str__(self):
         return self.title
+    
+class Departamentos(models.Model):
+    title=models.CharField(max_length=90, default='depto1')
+    monedasMaximas=models.PositiveIntegerField(default=999)
+    monedasDadas=models.PositiveIntegerField(default=0)
+
+    def publish(self):
+        self.save()
+    def __str__(self):
+        return self.title
+
+    def __saldoPorPagar__(self, monedasTotales, costoTotal):
+        costoPorMoneda=costoTotal/monedasTotales
+        return self.monedasDadas*costoPorMoneda

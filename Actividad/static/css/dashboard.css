@@ -1,0 +1,33 @@
+/*
+=======
+NavBar
+=======
+*/
+
+.navbar-header {
+	/*Defining the pink color on navbar*/
+	background-color: #e92f82;
+	color: white;
+}
+
+.navbar-default .navbar-brand {
+	color: white;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: white;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+	background-color: transparent;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+	background-color: #332f48;
+	color: white;
+}
+.navbar-default .navbar-nav>li>a {
+	color: white;
+}
+.navbar-default .navbar-nav>.active>a {
+	background-color: #474159;
+	color: white;
+}

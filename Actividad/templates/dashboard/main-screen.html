@@ -1,65 +1,13 @@
-{% extends "base/base.html" %}
+{% extends "base/navbar.html" %}
 {% load staticfiles %}
 {% block title %}PARECI{% endblock %}
-{% block styles%} <link rel="stylesheet" type="text/css" href="{% static "css/landing.css" %}"> {% endblock %}
+{% block styles%} <link rel="stylesheet" type="text/css" href="{% static "css/dashboard.css" %}"> {% endblock %}
 
 {% block body %}
 
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed navbar-right" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">PARECI</a>
-    </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="/register">Registrarse</a></li>
-        <li><a href="#">Iniciar Sesión</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+<div class="container-fluid">
 
-<div class="main-container container text-center">
-	<main class="col-xs-12">
-		<h1>PARECI</h1>
-		<h4>Realiza trámites gubernamentales y responsabilidades ciudadanas bajo un sistema de incentivos.</h4>
-		<a class="btn btn-success btn-lg"href="/register">Regístrate</a>
-	</main>
-	
-	<section class="col-xs-12 about-us">
-		<h2 class="subtitle">¿Cómo funciona?</h2>
-		<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat.</p>
-		<img src="{% static "img/coin.png" %}" alt="">
-	</section>
-
-	<section class="partner col-xs-12">
-		<h2 class="subtitle"></h2>
-		<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad .</p>
-		<img src="" alt="">
-		
-	</section>
-
-	<footer>
-		
-	</footer>
 </div>
 
 {% endblock %}

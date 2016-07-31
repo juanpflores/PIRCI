@@ -9,5 +9,8 @@ urlpatterns = [
     url(r'dashboard/main$',views.DashboardMain,name='DashboardMain'),
 	url(r'dashboard/premios/500$',views.Premios500,name='Premios500'),
 	url(r'logOut',views.LogOut,name='LogOut'),
-	url(r'puntosDisponibles',views.PuntosDisp,name='PuntosDisp')
+	url(r'puntosDisponibles',views.PuntosDisp,name='PuntosDisp'),
+	url(r'historial-de-puntos',views.HistPuntos,name='HistPuntos'),
+	url(r'canjea500/tramites',views.Canjea500Tramites,name='Canjea500Tramites'),
+	url(r'canjea500/adeudos',views.Canjea500Adeudos,name='Canjea500Adeudos')
 	]

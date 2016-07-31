@@ -1,1 +1,10 @@
-{{ posts }}
+{% for post in posts %}
+	<a href={{post.url}}>
+	    <div>
+	        <p>{{ post.titulo }}</p>
+	        <p>{{ post.organismo }}</p>
+	        <p>{{ post.descripcion }}</p>
+	        <p>{{ post.recompensa }}</p>
+	    </div>
+	  </a>
+{% endfor %}

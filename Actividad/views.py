@@ -63,3 +63,11 @@ def Premios500 (request):
 def LogOut(request):
 	Sesion.objects.all().delete()
 	return HttpResponseRedirect("/")
+
+def Canjea500Tramites(request):
+	return render(request, 'dashboard/canjea500tramites.html', {})
+def Canjea500Adeudos(request):
+	return render(request, 'dashboard/canjea500adeudoss.html', {})
+
+def HistPuntos(request):
+	return render(request, 'dashboard/canjea500adeudoss.html', {})

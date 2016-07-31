@@ -3,7 +3,7 @@
 {% block title %}Dashboard PARECI{% endblock %}
 {% block styles%} 
 
-{{miUsuario}}
+	<input type="hidden" name="user.name" value="{{miUsuario}}">
 	<link rel="stylesheet" type="text/css" href="{% static "css/dashboard.css" %}"> 
 	<link href="https://cdn.jsdelivr.net/jquery.roundslider/1.3/roundslider.min.css" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" href="{% static "css/sweetalert.css" %}">
@@ -18,14 +18,14 @@
 		<button type="" class="btn  pink-button center-block btn-lg">Agregar Cupon</button>
 	</div>
 	<div class="redeem-ftr col-xs-12">
-		<a href="dashboard/premios/500" title="">
+		<a href="./premios/500" title="">
 			<div class="col-xs-6 left">
 				<p class="points">500 puntos</p>
 				<small class="redeem-desc">10% A 20% EN TRAMITE</small>
 			</div>
 
 		</a>
-		<a href="" title="">
+		<a href="./premios/1000" title="">
 			<div class="col-xs-6 right">
 				<p class="points">1000 puntos</p>
 				<small class="redeem-desc">ACCESO A FILA RÁPIDA</small>

@@ -19,12 +19,15 @@ def Welcome(request):
 	p=request.POST.get("myPass")
 	e=request.POST.get("myEmail")
 	t=request.POST.get("myTitle")
-	if c is not None:
-		Usuario.objects.create(curp=c, password=p, monedas='0', correo=e,title=t)
 	
+	if t is not None:
+		Sesion.objects.all().delete()
+		Sesion.objects.create(userTitle=t)
+		Usuario.objects.create(curp=c, password=p, monedas='0', correo=e,title=t)
+		return HttpResponseRedirect("./dashboard/main")
 	#me = User.objects.get(username='ola')
 	#return render(request, 'dashboard/main-Screen.html')
-	return HttpResponseRedirect("dashboard/main")
+	return HttpResponseRedirect("./register")
 
 def DashboardMain (request):
 	#get the proper amount of points

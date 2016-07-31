@@ -70,4 +70,4 @@ def Canjea500Adeudos(request):
 	return render(request, 'dashboard/canjea500adeudoss.html', {})
 
 def HistPuntos(request):
-	return render(request, 'dashboard/canjea500adeudoss.html', {})
+	return render(request, 'dashboard/canjea500adeudos.html', {})

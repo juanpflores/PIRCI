@@ -305,13 +305,16 @@ a#next2:hover {
 	font-weight: 200;
 	margin-top: 0;
     padding-bottom: 3rem;
+    text-decoration: none;
 }
 .tramites-title-2 {
 	text-align: center;
 	color: #76c1ba;
 	text-transform: uppercase;
 	font-weight: 200;
-
+}
+a:hover, a:active, a:visited {
+    text-decoration:none;
 }
 .bottom-side {
 	position: absolute;
@@ -321,9 +324,42 @@ a#next2:hover {
 	z-index: 999999;
 }
 
+/*
+=========
+Canjea
+=========
+*/
+.canjea {
+	text-align: center;
+	background-color: #332f4a;
+	color: white;
+	height: 92vh;
+}
+.canjea .title {
+	text-align: center;
+	color: #76c1ba;
+	text-transform: uppercase;
+	font-weight: 200;
+	margin-bottom: 5rem;
+}
+.canjea .value {
+	color: #e73184;
+	font-weight: 200;
+	font-size: 3rem;
+}
+.canjea .detail {
+	font-size: 2rem;
+	font-weight: 100;
+}
+.canjea .codigo-barras {
+	height: 9rem;
+}
 
-
-
+.canjea .instructions {
+	font-weight: 100;
+	text-transform: uppercase;
+	margin-top: 5rem;
+}
 
 
 

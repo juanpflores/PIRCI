@@ -25,10 +25,12 @@ class Usuario(models.Model):
     monedas=models.PositiveIntegerField()
     correo=models.CharField(max_length=90)
     title=models.CharField(max_length=90, default='user1')
-    def quitarPuntos(self,puntos):
-        self.monedas=self.monedas-puntos
-    def agregarPuntos(self, puntos):
-        self.monedas=self.monedas+puntos
+    def setCoins(self, coins):
+        self.monedas=self.monedas+coins
+        self.publish()
+    def getCoins(self):
+        return self.monedas
+    
     def getPass(self):
         return self.password
     def publish(self):

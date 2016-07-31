@@ -9,6 +9,7 @@ class Acti(models.Model):
     #imagen ..... https://docs.djangoproject.com/es/1.9/ref/models/fields/
     documentacion = models.TextField()
     recompensa=models.IntegerField()
+    identificacion=models.IntegerField(default=0)
     #boton=models.BooleanField()
 
 
@@ -46,3 +47,15 @@ class Departamentos(models.Model):
     def __saldoPorPagar__(self, monedasTotales, costoTotal):
         costoPorMoneda=costoTotal/monedasTotales
         return self.monedasDadas*costoPorMoneda
+
+class HistorialDeVisitas(models.Model):
+    user=models.CharField(max_length=90, default='user1')
+    evento=models.IntegerField(default=0)
+    def publish(self):
+        self.save()
+
+class Sesion(models.Model):
+    userTitle=models.CharField(max_length=90, default='user1')
+    def publish(self):
+        self.save()
+

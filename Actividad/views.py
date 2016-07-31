@@ -26,12 +26,12 @@ def DashboardMain (request):
 	return render(request,'dashboard/main-Screen.html')
 
 def LogIn(request):
-	return render(request,'temporal/logIn.html')
+	return render(request,'landing/logIn.html')
 def LogVerify(request):
 	
 	us=Usuario.objects.filter(title=request.POST.get("userN"))
 	if us:
 		for user in us:
 			if user.getPass()==request.POST.get("pass"):
-				return render(request,'dashboard/main')
-	return render(request,'temporal/logIn.html')
+				return HttpResponseRedirect('dashboard/main')
+	return HttpResponseRedirect("/logIn")

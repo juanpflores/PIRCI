@@ -59,16 +59,23 @@ def PuntosDisp (request):
 	return render(request, 'dashboard/puntosDisponibles.html', {'posts':aMostrar})
 
 def Premios500 (request):
-	return render(request, 'dashboard/premios500.html', {})
+	un=Sesion.objects.all()[0].getUser()
+	c=Usuario.objects.filter(title=un)[0].getCoins()
+	if c>499:
+		return render(request, 'dashboard/premios500.html', {'coins':c})
+	return HttpResponseRedirect("dashboard/main")
 def Premios1000 (request):
-	return render(request, 'dashboard/premios1000.html', {})
-
+	un=Sesion.objects.all()[0].getUser()
+	c=Usuario.objects.filter(title=un)[0].getCoins()
+	if c>999:
+		return render(request, 'dashboard/premios1000.html', {})
+	return HttpResponseRedirect("dashboard/main")
 def LogOut(request):
 	Sesion.objects.all().delete()
 	return HttpResponseRedirect("/")
 
 def Canjea500Tramites(request):
-	return render(request, 'dashboard/canjea500tramites.html', {})
+	return render(request, 'dashboard/canjea500tramites.html',  )
 def Canjea500Adeudos(request):
 	return render(request, 'dashboard/canjea500adeudos.html', {})
 def Canjea1000Tramites(request):

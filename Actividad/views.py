@@ -5,6 +5,7 @@ from .models import Usuario
 from .models import Sesion
 from .models import Acti
 from .models import HistorialDeVisitas
+from .models import HistoriaPremios
 # Create your views here.
 def Landing(request):
 	Sesion.objects.all().delete()
@@ -70,4 +71,6 @@ def Canjea500Adeudos(request):
 	return render(request, 'dashboard/canjea500adeudoss.html', {})
 
 def HistPuntos(request):
-	return render(request, 'dashboard/canjea500adeudoss.html', {})
+	return render(request, 'dashboard/historialPremios.html', {'posts':HistoriaPremios.objects.filter(usuario=Sesion.objects.all()[0].getUser())})
+
+	

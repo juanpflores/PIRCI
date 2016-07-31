@@ -1,5 +1,5 @@
 from django.db import models
- 
+from django.utils import timezone
 
 
 class Acti(models.Model):
@@ -60,5 +60,12 @@ class Sesion(models.Model):
     def publish(self):
         self.save()
 
+class HistoriaPremios(models.Model):
+    area=models.CharField(max_length=90, default='user1')
+    concepto=models.CharField(max_length=400, default='user1')
+    fecha=models.DateTimeField(default=timezone.now)
+    usuario=models.CharField(max_length=90, default='user1')
+    def publish(self):
+        self.save()
 
 

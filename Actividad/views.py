@@ -69,6 +69,10 @@ def Canjea500Tramites(request):
 	return render(request, 'dashboard/canjea500tramites.html', {})
 def Canjea500Adeudos(request):
 	return render(request, 'dashboard/canjea500adeudos.html', {})
+def Canjea1000Tramites(request):
+	return render(request, 'dashboard/canjea1000tramites.html', {})
+def Canjea1000Adeudos(request):
+	return render(request, 'dashboard/canjea1000adeudos.html', {})
 
 def HistPuntos(request):
 	return render(request, 'dashboard/historialPremios.html', {'posts':HistoriaPremios.objects.filter(usuario=Sesion.objects.all()[0].getUser())})

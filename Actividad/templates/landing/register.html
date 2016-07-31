@@ -13,7 +13,7 @@
 			<img class="logo" src="{% static "img/LOGO.png" %}" id="logo-prereci" alt="logotipo">
 		</div>
 		
-		<form action="/newUser/" method="post">
+		<form action="/newUser" method="post">
 			{% csrf_token %}
 			<div class="form-group">
 				<label for="InputUser">Usuario</label>

@@ -75,12 +75,20 @@ def LogOut(request):
 	return HttpResponseRedirect("/")
 
 def Canjea500Tramites(request):
+	un=Sesion.objects.all()[0].getUser()
+	c=Usuario.objects.filter(title=un)[0].setCoins(-500)
 	return render(request, 'dashboard/canjea500tramites.html',  )
 def Canjea500Adeudos(request):
+	un=Sesion.objects.all()[0].getUser()
+	c=Usuario.objects.filter(title=un)[0].setCoins(-500)
 	return render(request, 'dashboard/canjea500adeudos.html', {})
 def Canjea1000Tramites(request):
+	un=Sesion.objects.all()[0].getUser()
+	c=Usuario.objects.filter(title=un)[0].setCoins(-1000)
 	return render(request, 'dashboard/canjea1000tramites.html', {})
 def Canjea1000Adeudos(request):
+	un=Sesion.objects.all()[0].getUser()
+	c=Usuario.objects.filter(title=un)[0].setCoins(-1000)
 	return render(request, 'dashboard/canjea1000adeudos.html', {})
 
 def HistPuntos(request):

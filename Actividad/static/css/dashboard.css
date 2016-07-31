@@ -57,6 +57,9 @@ Main Screen
 */
 .main-screen {
 	height: 92vh;
+	width: 100vw;
+	position: absolute;
+	padding: 0;
 }
 
 /*
@@ -66,7 +69,7 @@ Slider
 */
 #slider {
     margin-top: 15vh;
-	margin-left: 10px;
+    margin-bottom: 2rem;
 }
 #slider .rs-range-color  {
     background-color: #33B5E5;
@@ -89,15 +92,79 @@ Slider
 #slider .rs-border  {
     border-color: transparent;
 }
-.slider-value {
-	position: relative;
-    top: -26vh;
-    left: 24vw;
-    z-index: 999;
+.rs-tooltip.edit, .rs-tooltip .rs-input {
     color: #e7297e;
     font-size: 8rem;
     font-weight: 200;
 }
+
+/*
+========
+General
+========
+*/
+
+.pink-button {
+	background-color: #e92f82;
+	color: white;	
+    z-index: 9999;
+    position: relative;
+}
+.pink-button:focus {
+	background-color: #e92f82;
+	color: white;
+	border: 1px solid #e92f82;
+	outline: none;
+}
+.pink-button:active {
+	background-color: #de2d7c;
+	color: white;
+	border: 1px solid #e92f82;
+}
+
+/*
+========
+Footer
+========
+
+*/
+.redeem-ftr {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	padding: 0;
+}
+
+.redeem-ftr .points {
+	font-weight: 300;
+	text-decoration: underline;
+	-moz-text-decoration-color: #4aadb5;
+    text-decoration-color: #4aadb5;
+
+}
+.redeem-ftr .left {
+	background-color: #332f4a;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: white;
+}
+
+.redeem-ftr .right {
+	background-color: #1f96ac;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: white;
+}
+
+
+
+
+
+
+
+
+
 
 
 

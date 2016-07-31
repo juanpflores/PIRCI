@@ -49,6 +49,15 @@ input.form-control {
     margin: 10px auto;
 }
 
+#cdmx-logo-login{
+	position: relative;
+    bottom: -14rem;
+    height: 80px;
+	display: block;
+    padding-top: 10px;
+    margin: 10px auto;
+}
+
 #logo-prereci {
 	height: 80px;
 	display: block;

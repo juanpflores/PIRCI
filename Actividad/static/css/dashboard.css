@@ -369,7 +369,7 @@ Historial
 */
 .historial-premios {
 	padding: 0;
-    height: 91vh;
+    min-height: 91vh;
     position: absolute;
 	background-color: #332f48;
 	color: white;

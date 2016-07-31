@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.views.generic import RedirectView
 #from .forms import RegisterUser
 from .models import Usuario
 from .models import Sesion

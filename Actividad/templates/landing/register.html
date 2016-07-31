@@ -1,0 +1,50 @@
+{% extends "base/base.html" %}
+{% load staticfiles %}
+{% block title %}Registro PARECI{% endblock %}
+{% block styles%}
+	<link rel="stylesheet" type="text/css" href="{% static "css/register.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/sweetalert.css" %}">
+
+{% endblock %}
+{% block body %}
+	<div class="container-fluid">
+		<div class="registro-container">
+			<div class="col-xs-12">
+				<img class="logo" src="{% static "img/LOGO.png" %}" id="logo-prereci" alt="logotipo">
+			</div>
+			
+			<form action="/newUser/" method="post">
+				{% csrf_token %}
+				<div class="form-group">
+					<label for="InputUser">Usuario</label>
+					<input type="text" name="myTitle" class="form-control" id="InputUser" placeholder="AnaMariaP87">
+				</div>
+				<div class="form-group">
+					<label for="InputPassword">Contraseña</label>
+					<input type="password" name="myPass" class="form-control" id="InputPassword" placeholder="Contraseña">
+				</div>
+				
+				<div class="form-group">
+					<label for="InputEmail">Correo Electrónico</label>
+					<input type="email" name="myEmail"class="form-control" id="InputEmail" placeholder="ana@correo.com">
+				</div>
+				<div class="form-group">
+					<label for="InputCURP">CURP</label>
+					<input type="text" name="myCurp"class="form-control" id="InputCURP" placeholder="CURP">
+				</div>
+				<button class="btn btn-default btn-lg col-xs-12" id="pink">Registrar</button>
+			</form>
+			<img src="{% static "img/cdmx1.png" %}" alt="CDMX" id="cdmx-logo">
+			
+		</div>
+		
+		
+	</div>
+{% endblock %}
+{% block scripts %}
+	<script src="{% static "js/sweetalert.min.js" %}" type="text/javascript"></script>
+	<script src="{% static "js/new-user.js" %}" type="text/javascript"></script>
+{% endblock %}
+
+
+

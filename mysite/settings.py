@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Actividad',
+    
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -121,3 +122,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+
+
+
+
+

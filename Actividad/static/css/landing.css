@@ -1,0 +1,58 @@
+
+/*
+==========
+Editorial
+==========
+*/
+.subtitle {
+	margin-top: 12vh;
+	text-transform: capitalize;
+}
+.description {
+
+}
+
+
+.navbar {
+	margin-bottom: 0;
+}
+main{
+	margin-top: 33vh;
+	color: white;
+	margin-bottom: 30vh;
+}
+.main-container {
+	height: 92vh;
+	background: url(https://hd.unsplash.com/photo-1427751840561-9852520f8ce8) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+section {
+	height: 100vh;
+}
+
+/*
+========
+About Us
+========
+*/
+.about-us img {
+	margin-left: 12vw;
+    margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

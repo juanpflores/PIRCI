@@ -1,0 +1,105 @@
+/*
+=======
+NavBar
+=======
+*/
+
+.navbar-header {
+	/*Defining the pink color on navbar*/
+	background-color: #e92f82;
+	color: white;
+}
+.navbar-default{
+	margin-bottom: 0;
+	border: none;
+}
+.navbar-default .navbar-brand {
+	color: white;
+}
+.navbar-default .navbar-collapse {
+	border: none;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: white;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+	background-color: transparent;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+	background-color: #332f48;
+	color: white;
+}
+.navbar-default .navbar-nav>li>a {
+	color: white;
+}
+.navbar-default .navbar-nav>.active>a {
+	background-color: #474159;
+	color: white;
+}
+.navbar-toggle {
+	float: left;
+	margin-left: 15px;
+	border: none;
+}
+#add-btn {
+	float: right;
+    border: none;
+    font-size: 3rem;
+    padding: 0;
+    margin-top: 1px;
+}
+
+/*
+=============
+Main Screen
+=============
+*/
+.main-screen {
+	height: 92vh;
+}
+
+/*
+=============
+Slider
+=============
+*/
+#slider {
+    margin-top: 15vh;
+	margin-left: 10px;
+}
+#slider .rs-range-color  {
+    background-color: #33B5E5;
+}
+#slider .rs-path-color  {
+    background-color: #C2E9F7;
+}
+#slider .rs-handle  {
+    background-color: #C2E9F7;
+    padding: 7px;
+    border: 2px solid #C2E9F7;
+}
+#slider .rs-handle.rs-focus  {
+    border-color: #33B5E5;
+}
+#slider .rs-handle:after  {
+    border-color: #33B5E5;
+    background-color: #33B5E5;
+}
+#slider .rs-border  {
+    border-color: transparent;
+}
+.slider-value {
+	position: relative;
+    top: -26vh;
+    left: 24vw;
+    z-index: 999;
+    color: #e7297e;
+    font-size: 8rem;
+    font-weight: 200;
+}
+
+
+
+
+

@@ -14,11 +14,14 @@ def Welcome(request):
 	p=request.POST.get("myPass")
 	e=request.POST.get("myEmail")
 	t=request.POST.get("myTitle")
-	Usuario.objects.create(curp=c, password=p, monedas='0', correo=e,title=t)
+	if c is not None:
+		Usuario.objects.create(curp=c, password=p, monedas='0', correo=e,title=t)
+	
 	#me = User.objects.get(username='ola')
-	return render(request, 'dashboard/main-Screen.html')
+	#return render(request, 'dashboard/main-Screen.html')
+	return HttpResponseRedirect("dashboard/main")
 
-def Dashboard (request):
+def DashboardMain (request):
 	#usuario=request.POST.get("myTitle")
 	return render(request,'dashboard/main-Screen.html')
 
@@ -30,5 +33,5 @@ def LogVerify(request):
 	if us:
 		for user in us:
 			if user.getPass()==request.POST.get("pass"):
-				return render(request,'dashboard/main-Screen.html')
+				return render(request,'dashboard/main')
 	return render(request,'temporal/logIn.html')

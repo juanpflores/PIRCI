@@ -21,3 +21,6 @@ def Welcome(request):
 def Dashboard (request):
 	#usuario=request.POST.get("myTitle")
 	return render(request,'dashboard/main-Screen.html')
+
+def LogIn(request):
+	return render(request,'temporal/logIn.html')

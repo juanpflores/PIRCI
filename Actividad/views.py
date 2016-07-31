@@ -79,4 +79,6 @@ def Canjea1000Adeudos(request):
 def HistPuntos(request):
 	return render(request, 'dashboard/historialPremios.html', {'posts':HistoriaPremios.objects.filter(usuario=Sesion.objects.all()[0].getUser())})
 
-	
+def CanjeaCodigo(request):
+	return render(request, 'dashboard/canjeaCodigo.html', {})
+

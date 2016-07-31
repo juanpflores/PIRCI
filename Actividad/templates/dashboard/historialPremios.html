@@ -1,9 +1,29 @@
-{% for post in posts %}
+{% extends "base/navbar.html" %}
+{% load staticfiles %}
+{% block title %}Historial Premios{% endblock %}
+{% block styles%}
+
+	<link rel="stylesheet" type="text/css" href="{% static "css/dashboard.css" %}">
+
+{% endblock %}
+{% block body %}
+
+	<div class="container-fluid col-xs-12 historial-premios">
+	{% for post in posts %}
 	
-	    <div>
-	        <p>{{ post.area }}</p>
-	        <p>{{ post.concepto }}</p>
-	        <p>{{ post.fecha }}</p>
+	    <div class="post">
+	        <p class="type">{{ post.area }}</p>
+	        <p class="description">{{ post.concepto }}.</p>
+	        <p class="date">{{ post.fecha }}</p>
 	    </div>
 	  
 {% endfor %}
+	</div>
+
+{% endblock %}
+{% block scripts %}
+
+{% endblock %}
+
+
+

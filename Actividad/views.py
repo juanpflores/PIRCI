@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.views.generic import RedirectView
 #from .forms import RegisterUser
 from .models import Usuario
 from .models import Sesion
@@ -66,13 +67,13 @@ def Premios500 (request):
 	c=Usuario.objects.filter(title=un)[0].getCoins()
 	if c>499:
 		return render(request, 'dashboard/premios500.html', {'coins':c})
-	return HttpResponseRedirect("dashboard/main")
+	return HttpResponseRedirect("../../dashboard/main")
 def Premios1000 (request):
 	un=Sesion.objects.all()[0].getUser()
 	c=Usuario.objects.filter(title=un)[0].getCoins()
 	if c>999:
 		return render(request, 'dashboard/premios1000.html', {})
-	return HttpResponseRedirect("dashboard/main")
+	return HttpResponseRedirect("../../dashboard/main")
 def LogOut(request):
 	Sesion.objects.all().delete()
 	return HttpResponseRedirect("/")

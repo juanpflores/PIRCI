@@ -369,7 +369,7 @@ Historial
 */
 .historial-premios {
 	padding: 0;
-    height: 91vh;
+    min-height: 91vh;
     position: absolute;
 	background-color: #332f48;
 	color: white;
@@ -401,7 +401,6 @@ Puntos Disponibles
 ==================
 */
 .puntos-disponibles {
-	padding: 0;
     height: 91vh;
     position: absolute;
 	background-color: #332f48;
@@ -411,6 +410,9 @@ Puntos Disponibles
 
 .puntos-disponibles .panel {
 	border: none;
+	padding: 0;
+	margin-right: 10px
+
 }
 .puntos-disponibles .panel-heading {
 	background-color: #e92f82;

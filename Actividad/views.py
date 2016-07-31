@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.views.generic import RedirectView
 #from .forms import RegisterUser
 from .models import Usuario
 from .models import Sesion
@@ -19,16 +20,19 @@ def Welcome(request):
 	p=request.POST.get("myPass")
 	e=request.POST.get("myEmail")
 	t=request.POST.get("myTitle")
-	if c is not None:
-		Usuario.objects.create(curp=c, password=p, monedas='0', correo=e,title=t)
 	
+	if t is not None:
+		Sesion.objects.all().delete()
+		Sesion.objects.create(userTitle=t)
+		Usuario.objects.create(curp=c, password=p, monedas='0', correo=e,title=t)
+		return HttpResponseRedirect("./dashboard/main")
 	#me = User.objects.get(username='ola')
 	#return render(request, 'dashboard/main-Screen.html')
-	return HttpResponseRedirect("dashboard/main")
+	return HttpResponseRedirect("./register")
 
 def DashboardMain (request):
 	#get the proper amount of points
-	return render(request,'dashboard/main-Screen.html',{'miUsuario': Sesion.objects.all()[0].getUser()})
+	return render(request,'dashboard/main-Screen.html',{'miUsuario': Usuario.objects.filter(title= Sesion.objects.all()[0].getUser())[0]})
 
 def LogIn(request):
 	return render(request,'landing/logIn.html')
@@ -59,21 +63,40 @@ def PuntosDisp (request):
 	return render(request, 'dashboard/puntosDisponibles.html', {'posts':aMostrar})
 
 def Premios500 (request):
-	return render(request, 'dashboard/premios500.html', {})
+	un=Sesion.objects.all()[0].getUser()
+	c=Usuario.objects.filter(title=un)[0].getCoins()
+	if c>499:
+		return render(request, 'dashboard/premios500.html', {'coins':c})
+	return HttpResponseRedirect("../../dashboard/main")
 def Premios1000 (request):
-	return render(request, 'dashboard/premios1000.html', {})
-
+	un=Sesion.objects.all()[0].getUser()
+	c=Usuario.objects.filter(title=un)[0].getCoins()
+	if c>999:
+		return render(request, 'dashboard/premios1000.html', {})
+	return HttpResponseRedirect("../../dashboard/main")
 def LogOut(request):
 	Sesion.objects.all().delete()
 	return HttpResponseRedirect("/")
 
 def Canjea500Tramites(request):
-	return render(request, 'dashboard/canjea500tramites.html', {})
+	un=Sesion.objects.all()[0].getUser()
+	c=Usuario.objects.filter(title=un)[0].setCoins(-500)
+	HistoriaPremios.objects.create(area="Tramites>SRE", concepto="¡Felicidades! Recibiste un descuento de $100 en tu pago de pasaporte.",usuario=un)
+	return render(request, 'dashboard/canjea500tramites.html',  )
 def Canjea500Adeudos(request):
+	un=Sesion.objects.all()[0].getUser()
+	c=Usuario.objects.filter(title=un)[0].setCoins(-500)
+	HistoriaPremios.objects.create(area="Adeudos>Tránsito", concepto=r"¡Felicidades! Eres acreedor a un descuento del 10% en tu próxima multa. ",usuario=un)
 	return render(request, 'dashboard/canjea500adeudos.html', {})
 def Canjea1000Tramites(request):
+	un=Sesion.objects.all()[0].getUser()
+	c=Usuario.objects.filter(title=un)[0].setCoins(-1000)
+	HistoriaPremios.objects.create(area="Trámites>Tránsito", concepto="¡Vaya! Te has ganado pasar a la fila rápida la próxima vez que renueves tu tarjeta de circulación.",usuario=un)
 	return render(request, 'dashboard/canjea1000tramites.html', {})
 def Canjea1000Adeudos(request):
+	un=Sesion.objects.all()[0].getUser()
+	c=Usuario.objects.filter(title=un)[0].setCoins(-1000)
+	HistoriaPremios.objects.create(area="Adeudos>SMA", concepto="¡En tu próxima verificación tendrás atención inmediata!",usuario=un)
 	return render(request, 'dashboard/canjea1000adeudos.html', {})
 
 def HistPuntos(request):

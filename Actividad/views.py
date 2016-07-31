@@ -46,7 +46,7 @@ def ActivityList (request):
 	#conseguir la lista de Visitas realizadas por el usuario
 	us=Sesion.objects.all()
 	realizadas=HistorialDeVisitas.objects.filter(user=us[0].getUser())
-	aregar las vsitas que no esten en 
+	#aregar las vsitas que no esten en 
 	return HttpResponseRedirect("")
 
 def Premios500 (request):

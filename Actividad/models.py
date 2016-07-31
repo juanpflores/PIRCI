@@ -20,13 +20,14 @@ class Acti(models.Model):
         return self.titulo
 
 class Usuario(models.Model):
-    curp = models.CharField(max_length=20)
+    curp = models.CharField(max_length=20, default=" ")
     password = models.CharField(max_length=20)
     monedas=models.PositiveIntegerField()
     correo=models.CharField(max_length=90)
     title=models.CharField(max_length=90, default='user1')
 
-   
+    def getPass(self):
+        return self.password
     def publish(self):
         self.save()
     def __str__(self):

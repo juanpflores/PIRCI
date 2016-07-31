@@ -24,3 +24,11 @@ def Dashboard (request):
 
 def LogIn(request):
 	return render(request,'temporal/logIn.html')
+def LogVerify(request):
+	
+	us=Usuario.objects.filter(title=request.POST.get("userN"))
+	if us:
+		for user in us:
+			if user.getPass()==request.POST.get("pass"):
+				return render(request,'dashboard/main-Screen.html')
+	return render(request,'temporal/logIn.html')

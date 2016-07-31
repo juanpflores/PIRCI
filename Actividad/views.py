@@ -27,7 +27,7 @@ def Welcome(request):
 
 def DashboardMain (request):
 	#get the proper amount of points
-	return render(request,'dashboard/main-Screen.html')
+	return render(request,'dashboard/main-Screen.html',{'miUsuario': Sesion.objects.all()[0].getUser()})
 
 def LogIn(request):
 	return render(request,'landing/logIn.html')

@@ -6,15 +6,13 @@ class Acti(models.Model):
     organismo = models.CharField(max_length=50)
     titulo = models.CharField(max_length=200)
     descripcion = models.TextField()
-    #imagen ..... https://docs.djangoproject.com/es/1.9/ref/models/fields/
     documentacion = models.TextField()
     recompensa=models.IntegerField()
     identificacion=models.IntegerField(default=0)
     url=models.CharField(max_length=200,default="www.google.com")
-    #boton=models.BooleanField()
-
-
-
+    
+    def getId(self):
+        return self.identificacion
     def publish(self):
         self.save()
 
@@ -61,4 +59,6 @@ class Sesion(models.Model):
         return self.userTitle
     def publish(self):
         self.save()
+
+
 

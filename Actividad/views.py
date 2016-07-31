@@ -31,7 +31,7 @@ def Welcome(request):
 
 def DashboardMain (request):
 	#get the proper amount of points
-	return render(request,'dashboard/main-Screen.html',{'miUsuario': Sesion.objects.all()[0].getUser()})
+	return render(request,'dashboard/main-Screen.html',{'miUsuario': Usuario.objects.filter(title= Sesion.objects.all()[0].getUser())[0]})
 
 def LogIn(request):
 	return render(request,'landing/logIn.html')
@@ -66,13 +66,13 @@ def Premios500 (request):
 	c=Usuario.objects.filter(title=un)[0].getCoins()
 	if c>499:
 		return render(request, 'dashboard/premios500.html', {'coins':c})
-	return HttpResponseRedirect("dashboard/main")
+	return HttpResponseRedirect("../../dashboard/main")
 def Premios1000 (request):
 	un=Sesion.objects.all()[0].getUser()
 	c=Usuario.objects.filter(title=un)[0].getCoins()
 	if c>999:
 		return render(request, 'dashboard/premios1000.html', {})
-	return HttpResponseRedirect("dashboard/main")
+	return HttpResponseRedirect("../../dashboard/main")
 def LogOut(request):
 	Sesion.objects.all().delete()
 	return HttpResponseRedirect("/")

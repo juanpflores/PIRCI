@@ -7,7 +7,9 @@ from .models import Acti
 from .models import HistorialDeVisitas
 # Create your views here.
 def Landing(request):
-    return render(request, 'landing/index.html', {})
+	Sesion.objects.all().delete()
+	return render(request, 'landing/index.html', {})
+
 def Register(request):
 	return render(request, 'landing/register.html', {})
 
@@ -40,14 +42,24 @@ def LogVerify(request):
 				return HttpResponseRedirect('dashboard/main')
 	return HttpResponseRedirect("/logIn")
 
-def ActivityList (request):
+def PuntosDisp (request):
+	aMostrar=[]
 	#conseguir la lista de actividades
 	actividades=Acti.objects.all()
 	#conseguir la lista de Visitas realizadas por el usuario
 	us=Sesion.objects.all()
 	realizadas=HistorialDeVisitas.objects.filter(user=us[0].getUser())
-	#aregar las vsitas que no esten en 
-	return HttpResponseRedirect("")
+	#obtener la lista de las actividades que no tengan contraparte en realizadas
+	for accion in actividades:
+		t=HistorialDeVisitas.objects.filter(user=us[0].getUser()).filter(evento=accion.getId())
+		if not t:
+			aMostrar.append(accion)
+
+	return render(request, 'dashboard/puntosDisponibles.html', {'posts':aMostrar})
 
 def Premios500 (request):
 	return render(request, 'dashboard/premios500.html', {})
+
+def LogOut(request):
+	Sesion.objects.all().delete()
+	return HttpResponseRedirect("/")

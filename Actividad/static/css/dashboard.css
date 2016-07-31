@@ -49,7 +49,9 @@ NavBar
     padding: 0;
     margin-top: 1px;
 }
-
+.navbar-default .navbar-nav>li>a:focus{
+	color: white;
+}
 /*
 =============
 Main Screen
@@ -70,6 +72,10 @@ Slider
 #slider {
     margin-top: 15vh;
     margin-bottom: 2rem;
+}
+#slider-500{
+	margin-top: 6vh;
+
 }
 #slider .rs-range-color  {
     background-color: #33B5E5;
@@ -122,6 +128,24 @@ General
 	border: 1px solid #e92f82;
 }
 
+
+/*
+===========
+Premios 500
+===========
+*/
+.premios-500{
+	padding: 0;
+	height: 91vh;
+	position: absolute;
+}
+.slider-top-container {
+	background: #7b7b7c;
+}
+
+.slider-bottom-container {
+	background: transparent;
+}
 /*
 ========
 Footer
@@ -158,9 +182,144 @@ Footer
 }
 
 
+/*
+======
+Slider
+======
+*/
+#slides {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  top: -5rem;
 
+}
 
+#slides ul {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
 
+#slides li {
+  width: 100%;
+  float: left;
+  text-align: center;
+  position: relative;
+  color: white;
+  font-size: 2rem;
+  font-weight: 200;
+
+}
+
+#slides2 {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  top: -5rem;
+
+}
+
+#slides2 ul {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+#slides2 li {
+  width: 100%;
+  float: left;
+  text-align: center;
+  position: relative;
+  color: white;
+  font-size: 2rem;
+  font-weight: 200;
+
+}
+
+.btn-bar {
+
+}
+
+#buttons {
+  padding: 0 0 5px 0;
+  float: right;
+}
+#buttons2 {
+  padding: 0 0 5px 0;
+  float: right;
+}
+
+#buttons a {
+	text-align: center;
+	display: block;
+	font-size: 50px;
+	float: left;
+	outline: 0;
+	position: relative;
+	z-index: 99999999;
+	height: 5rem;
+	color: white;
+	text-decoration: none;
+	display: block;
+	padding: 9px;
+	width: 35px;
+	top: -3rem;
+
+}
+
+#buttons2 a {
+	text-align: center;
+	display: block;
+	font-size: 50px;
+	float: left;
+	outline: 0;
+	position: relative;
+	z-index: 99999999;
+	height: 5rem;
+	color: white;
+	text-decoration: none;
+	display: block;
+	padding: 9px;
+	width: 35px;
+	top: -3rem;
+
+}
+
+a#prev:hover,
+a#next:hover {
+  text-shadow: .5px 0px #b14943;
+}
+a#prev2:hover,
+a#next2:hover {
+  text-shadow: .5px 0px #b14943;
+}
+.tramites-title {
+	text-align: center;
+	color: #76c1ba;
+	text-transform: uppercase;
+	font-weight: 200;
+	margin-top: 0;
+    padding-bottom: 3rem;
+}
+.tramites-title-2 {
+	text-align: center;
+	color: #76c1ba;
+	text-transform: uppercase;
+	font-weight: 200;
+
+}
+.bottom-side {
+	position: absolute;
+	padding: 0;	
+	bottom: 0;
+	background-color: #332f4a;
+	z-index: 999999;
+}
 
 
 

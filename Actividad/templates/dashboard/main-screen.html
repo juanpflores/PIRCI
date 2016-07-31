@@ -3,6 +3,7 @@
 {% block title %}Dashboard PARECI{% endblock %}
 {% block styles%} 
 
+{{miUsuario}}
 	<link rel="stylesheet" type="text/css" href="{% static "css/dashboard.css" %}"> 
 	<link href="https://cdn.jsdelivr.net/jquery.roundslider/1.3/roundslider.min.css" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" href="{% static "css/sweetalert.css" %}">
@@ -22,6 +23,7 @@
 				<p class="points">500 puntos</p>
 				<small class="redeem-desc">10% A 20% EN TRAMITE</small>
 			</div>
+
 		</a>
 		<a href="" title="">
 			<div class="col-xs-6 right">

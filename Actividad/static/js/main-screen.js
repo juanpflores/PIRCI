@@ -11,6 +11,21 @@ $(document).ready(function(){
 		readOnly: true,
 	    startAngle: 315
 	});
+
+	$("#slider-500").roundSlider({
+	    radius: 100,
+	    width: 8,
+	    handleSize: "+16",
+    	handleShape: "dot",
+	    circleShape: "pie",
+	    sliderType: "min-range",
+	    value: 250,
+	    max: "5000",
+		readOnly: true,
+	    startAngle: 315
+	});
+
+
 	$(".pink-button").click(function(){
 		swal({   
 		title: "Agregar Código",   

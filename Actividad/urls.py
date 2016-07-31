@@ -15,5 +15,9 @@ urlpatterns = [
 	url(r'canjea500/tramites',views.Canjea500Tramites,name='Canjea500Tramites'),
 	url(r'canjea500/adeudos',views.Canjea500Adeudos,name='Canjea500Adeudos'),
 	url(r'canjea1000/tramites',views.Canjea1000Tramites,name='Canjea1000Tramites'),
-	url(r'canjea1000/adeudos',views.Canjea1000Adeudos,name='Canjea1000Adeudos')
+	url(r'canjea1000/adeudos',views.Canjea1000Adeudos,name='Canjea1000Adeudos'),
+	url(r'add/500',views.Add500,name='Add500'),
+	url(r'add/1000',views.Add1000,name='Add1000'),
+	url(r'loose/500',views.Loose500,name='Loose500'),
+	url(r'loose/1000',views.Loose1000,name='Loose1000')
 	]

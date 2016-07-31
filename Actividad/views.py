@@ -79,4 +79,22 @@ def Canjea1000Adeudos(request):
 def HistPuntos(request):
 	return render(request, 'dashboard/historialPremios.html', {'posts':HistoriaPremios.objects.filter(usuario=Sesion.objects.all()[0].getUser())})
 
-	
+def CanjeaCodigo(request):
+	return render(request, 'dashboard/canjeaCodigo.html', {})
+
+def Add500(request):
+	u=Sesion.objects.all()[0].getUser()
+	Usuario.objects.filter(title=u).agregarPuntos(500)
+	return HttpResponseRedirect("dashboard/main-screen.html")
+def Add1000(request):
+	u=Sesion.objects.all()[0].getUser()
+	Usuario.objects.filter(title=u).agregarPuntos(1000)
+	return HttpResponseRedirect("dashboard/main-screen.html")
+def Loose500(request):
+	u=Sesion.objects.all()[0].getUser()
+	Usuario.objects.filter(title=u).quitarPuntos(500)
+	return HttpResponseRedirect("dashboard/main-screen.html")
+def Loose1000(request):
+	u=Sesion.objects.all()[0].getUser()
+	Usuario.objects.filter(title=u).quitarPuntos(1000)
+	return HttpResponseRedirect("dashboard/main-screen.html")

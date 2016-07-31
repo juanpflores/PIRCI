@@ -8,6 +8,7 @@ urlpatterns = [
     url(r'logInAttempt', views.LogVerify, name='LogVerify'),
     url(r'dashboard/main$',views.DashboardMain,name='DashboardMain'),
 	url(r'dashboard/premios/500$',views.Premios500,name='Premios500'),
+	url(r'dashboard/premios/1000$',views.Premios1000,name='Premios1000'),
 	url(r'logOut',views.LogOut,name='LogOut'),
 	url(r'puntosDisponibles',views.PuntosDisp,name='PuntosDisp'),
 	url(r'historial-de-puntos',views.HistPuntos,name='HistPuntos'),

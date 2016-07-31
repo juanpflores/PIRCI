@@ -60,6 +60,8 @@ def PuntosDisp (request):
 
 def Premios500 (request):
 	return render(request, 'dashboard/premios500.html', {})
+def Premios1000 (request):
+	return render(request, 'dashboard/premios1000.html', {})
 
 def LogOut(request):
 	Sesion.objects.all().delete()

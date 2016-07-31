@@ -305,13 +305,16 @@ a#next2:hover {
 	font-weight: 200;
 	margin-top: 0;
     padding-bottom: 3rem;
+    text-decoration: none;
 }
 .tramites-title-2 {
 	text-align: center;
 	color: #76c1ba;
 	text-transform: uppercase;
 	font-weight: 200;
-
+}
+a:hover, a:active, a:visited {
+    text-decoration:none;
 }
 .bottom-side {
 	position: absolute;
@@ -320,6 +323,129 @@ a#next2:hover {
 	background-color: #332f4a;
 	z-index: 999999;
 }
+
+/*
+=========
+Canjea
+=========
+*/
+.canjea {
+	text-align: center;
+	background-color: #332f4a;
+	color: white;
+	height: 92vh;
+}
+.canjea .title {
+	text-align: center;
+	color: #76c1ba;
+	text-transform: uppercase;
+	font-weight: 200;
+	margin-bottom: 5rem;
+}
+.canjea .value {
+	color: #e73184;
+	font-weight: 200;
+	font-size: 3rem;
+}
+.canjea .detail {
+	font-size: 2rem;
+	font-weight: 100;
+}
+.canjea .codigo-barras {
+	height: 9rem;
+}
+
+.canjea .instructions {
+	font-weight: 100;
+	text-transform: uppercase;
+	margin-top: 5rem;
+}
+
+
+/*
+=========
+Historial
+=========
+*/
+.historial-premios {
+	padding: 0;
+    height: 91vh;
+    position: absolute;
+	background-color: #332f48;
+	color: white;
+}
+
+.historial-premios .post {
+	border: 1px solid #57848b;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 1rem;
+}
+
+.historial-premios .date {
+	text-align: right;
+}
+.historial-premios .description {
+	font-size: 2rem;
+	font-weight: 200;
+}
+.historial-premios .type {
+	text-transform: uppercase;
+	font-weight:bold;
+
+}
+
+/*
+==================
+Puntos Disponibles
+==================
+*/
+.puntos-disponibles {
+	padding: 0;
+    height: 91vh;
+    position: absolute;
+	background-color: #332f48;
+	color: white;	
+	padding: 2rem;
+}
+
+.puntos-disponibles .panel {
+	border: none;
+}
+.puntos-disponibles .panel-heading {
+	background-color: #e92f82;
+	color: white;
+	text-transform: capitalize;
+	border: none;
+}
+.puntos-disponibles .panel-body {
+
+	background-color: #f1f1f1;
+	color: black;
+	border: none;
+	font-weight: 200;
+
+}
+.puntos-disponibles .panel-footer {
+	background-color: #75c5be;
+	border: none;
+	text-align: center;
+}
+.puntos-disponibles .panel-footer a {
+	color: white;
+	text-transform: uppercase;
+}
+.puntos-disponibles .incentive {
+	text-align: right;
+	text-transform: capitalize;
+}
+
+
+
+
+
+
+
 
 
 

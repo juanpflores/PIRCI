@@ -1,1 +1,26 @@
-{{ posts }}
+{% extends "base/navbar.html" %}
+{% load staticfiles %}
+{% block title %}Historial Premios{% endblock %}
+{% block styles%}
+	<link rel="stylesheet" type="text/css" href="{% static "css/dashboard.css" %}">
+{% endblock %}
+{% block body %}
+	<div class="container-fluid col-xs-12 puntos-disponibles">
+		{% for post in posts %}
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">{{ post.titulo }} - {{ post.organismo }}</h3>
+				</div>
+				<div class="panel-body">
+					<p>{{ post.descripcion }}</p>
+					<p class="incentive">Recompensa: {{ post.recompensa }}</p>
+				</div>
+				<div class="panel-footer"><a href="" title="">¡Participa Ahora!</a></div>
+			</div>
+			<a href={{post.url}}>
+			</a>
+		{% endfor %}
+	</div>
+{% endblock %}
+{% block scripts %}
+{% endblock %}

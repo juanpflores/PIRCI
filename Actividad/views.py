@@ -5,6 +5,7 @@ from .models import Usuario
 from .models import Sesion
 from .models import Acti
 from .models import HistorialDeVisitas
+from .models import HistoriaPremios
 # Create your views here.
 def Landing(request):
 	Sesion.objects.all().delete()
@@ -59,7 +60,41 @@ def PuntosDisp (request):
 
 def Premios500 (request):
 	return render(request, 'dashboard/premios500.html', {})
+def Premios1000 (request):
+	return render(request, 'dashboard/premios1000.html', {})
 
 def LogOut(request):
 	Sesion.objects.all().delete()
 	return HttpResponseRedirect("/")
+
+def Canjea500Tramites(request):
+	return render(request, 'dashboard/canjea500tramites.html', {})
+def Canjea500Adeudos(request):
+	return render(request, 'dashboard/canjea500adeudos.html', {})
+def Canjea1000Tramites(request):
+	return render(request, 'dashboard/canjea1000tramites.html', {})
+def Canjea1000Adeudos(request):
+	return render(request, 'dashboard/canjea1000adeudos.html', {})
+
+def HistPuntos(request):
+	return render(request, 'dashboard/historialPremios.html', {'posts':HistoriaPremios.objects.filter(usuario=Sesion.objects.all()[0].getUser())})
+
+def CanjeaCodigo(request):
+	return render(request, 'dashboard/canjeaCodigo.html', {})
+
+def Add500(request):
+	u=Sesion.objects.all()[0].getUser()
+	Usuario.objects.filter(title=u).agregarPuntos(500)
+	return HttpResponseRedirect("dashboard/main-screen.html")
+def Add1000(request):
+	u=Sesion.objects.all()[0].getUser()
+	Usuario.objects.filter(title=u).agregarPuntos(1000)
+	return HttpResponseRedirect("dashboard/main-screen.html")
+def Loose500(request):
+	u=Sesion.objects.all()[0].getUser()
+	Usuario.objects.filter(title=u).quitarPuntos(500)
+	return HttpResponseRedirect("dashboard/main-screen.html")
+def Loose1000(request):
+	u=Sesion.objects.all()[0].getUser()
+	Usuario.objects.filter(title=u).quitarPuntos(1000)
+	return HttpResponseRedirect("dashboard/main-screen.html")

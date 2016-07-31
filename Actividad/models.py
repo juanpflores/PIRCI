@@ -1,5 +1,5 @@
 from django.db import models
- 
+from django.utils import timezone
 
 
 class Acti(models.Model):
@@ -25,7 +25,10 @@ class Usuario(models.Model):
     monedas=models.PositiveIntegerField()
     correo=models.CharField(max_length=90)
     title=models.CharField(max_length=90, default='user1')
-
+    def quitarPuntos(self,puntos):
+        self.monedas=self.monedas-puntos
+    def agregarPuntos(self, puntos):
+        self.monedas=self.monedas+puntos
     def getPass(self):
         return self.password
     def publish(self):
@@ -57,6 +60,14 @@ class Sesion(models.Model):
     userTitle=models.CharField(max_length=90, default='user1')
     def getUser(self):
         return self.userTitle
+    def publish(self):
+        self.save()
+
+class HistoriaPremios(models.Model):
+    area=models.CharField(max_length=90, default='user1')
+    concepto=models.CharField(max_length=400, default='user1')
+    fecha=models.DateTimeField(default=timezone.now)
+    usuario=models.CharField(max_length=90, default='user1')
     def publish(self):
         self.save()
 
